@@ -1,0 +1,8 @@
+{
+  "generator-jhipster:7.0.0": {
+    "promptValues": {
+      "packageName": "br.com.fiap.guto",
+      "nativeLanguage": "pt-br"
+    }
+  }
+}

@@ -1,0 +1,40 @@
+
+entity Login {
+	login String
+    password String
+}
+
+entity Usuario {
+	nome String
+    cpf String
+    rg String
+}
+
+entity Telefones {
+	phoneDDD Integer
+    phoneNumero Integer
+}
+
+relationship OneToOne {
+	Login{loginXUsuario} to Usuario
+}
+
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	Usuario to Telefones{ddd}
+}
+
+// Set pagination options
+paginate Usuario, Telefones with infinite-scroll
+paginate Login with pagination
+
+// Use Data Transfer Objects (DTO)
+// dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
+

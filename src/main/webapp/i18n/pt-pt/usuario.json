@@ -1,0 +1,27 @@
+{
+  "gutoApp": {
+    "usuario": {
+      "home": {
+        "title": "Usuarios",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Criar novo(a) Usuario",
+        "createOrEditLabel": "Criar ou editar Usuario",
+        "notFound": "Nenhum Usuarios encontrado"
+      },
+      "created": "Um novo Usuario foi criado com o identificador {{ param }}",
+      "updated": "Usuario com identificador {{ param }} foi actualizado",
+      "deleted": "Usuario com identificador {{ param }} foi eliminado",
+      "delete": {
+        "question": "Tem a certeza que pretende eliminar o(a) Usuario {{ id }}?"
+      },
+      "detail": {
+        "title": "Usuario"
+      },
+      "id": "ID",
+      "nome": "Nome",
+      "cpf": "Cpf",
+      "rg": "Rg",
+      "telefones": "Telefones"
+    }
+  }
+}

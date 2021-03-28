@@ -1,0 +1,26 @@
+{
+  "gutoApp": {
+    "telefones": {
+      "home": {
+        "title": "Telefones",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Telefones",
+        "createOrEditLabel": "Criar ou editar Telefones",
+        "notFound": "Nenhum Telefones encontrado"
+      },
+      "created": "Um novo Telefones foi criado com o identificador {{ param }}",
+      "updated": "Um Telefones foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Telefones foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Telefones {{ id }}?"
+      },
+      "detail": {
+        "title": "Telefones"
+      },
+      "id": "ID",
+      "phoneDDD": "Phone DDD",
+      "phoneNumero": "Phone Numero",
+      "ddd": "Ddd"
+    }
+  }
+}

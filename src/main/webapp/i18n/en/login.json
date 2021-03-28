@@ -1,0 +1,26 @@
+{
+  "gutoApp": {
+    "login": {
+      "home": {
+        "title": "Logins",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Login",
+        "createOrEditLabel": "Create or edit a Login",
+        "notFound": "No Logins found"
+      },
+      "created": "A new Login is created with identifier {{ param }}",
+      "updated": "A Login is updated with identifier {{ param }}",
+      "deleted": "A Login is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Login {{ id }}?"
+      },
+      "detail": {
+        "title": "Login"
+      },
+      "id": "ID",
+      "login": "Login",
+      "password": "Password",
+      "loginXUsuario": "Login X Usuario"
+    }
+  }
+}

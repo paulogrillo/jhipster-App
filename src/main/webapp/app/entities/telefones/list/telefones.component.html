@@ -1,0 +1,90 @@
+<div>
+  <h2 id="page-heading" data-cy="TelefonesHeading">
+    <span jhiTranslate="gutoApp.telefones.home.title">Telefones</span>
+
+    <div class="d-flex justify-content-end">
+      <button class="btn btn-info mr-2" (click)="reset()" [disabled]="isLoading">
+        <fa-icon icon="sync" [spin]="isLoading"></fa-icon>
+        <span jhiTranslate="gutoApp.telefones.home.refreshListLabel">Refresh List</span>
+      </button>
+
+      <button
+        id="jh-create-entity"
+        data-cy="entityCreateButton"
+        class="btn btn-primary jh-create-entity create-telefones"
+        [routerLink]="['/telefones/new']"
+      >
+        <fa-icon icon="plus"></fa-icon>
+        <span jhiTranslate="gutoApp.telefones.home.createLabel"> Create a new Telefones </span>
+      </button>
+    </div>
+  </h2>
+
+  <jhi-alert-error></jhi-alert-error>
+
+  <jhi-alert></jhi-alert>
+
+  <div class="alert alert-warning" id="no-result" *ngIf="telefones?.length === 0">
+    <span jhiTranslate="gutoApp.telefones.home.notFound">No telefones found</span>
+  </div>
+
+  <div class="table-responsive" id="entities" *ngIf="telefones && telefones.length > 0">
+    <table class="table table-striped" aria-describedby="page-heading">
+      <thead>
+        <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
+          <th scope="col" jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col" jhiSortBy="phoneDDD">
+            <span jhiTranslate="gutoApp.telefones.phoneDDD">Phone DDD</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="phoneNumero">
+            <span jhiTranslate="gutoApp.telefones.phoneNumero">Phone Numero</span> <fa-icon icon="sort"></fa-icon>
+          </th>
+          <th scope="col" jhiSortBy="ddd.id"><span jhiTranslate="gutoApp.telefones.ddd">Ddd</span> <fa-icon icon="sort"></fa-icon></th>
+          <th scope="col"></th>
+        </tr>
+      </thead>
+      <tbody infinite-scroll (scrolled)="loadPage(page + 1)" [infiniteScrollDisabled]="page >= links['last']" [infiniteScrollDistance]="0">
+        <tr *ngFor="let telefones of telefones; trackBy: trackId" data-cy="entityTable">
+          <td>
+            <a [routerLink]="['/telefones', telefones.id, 'view']">{{ telefones.id }}</a>
+          </td>
+          <td>{{ telefones.phoneDDD }}</td>
+          <td>{{ telefones.phoneNumero }}</td>
+          <td>
+            <div *ngIf="telefones.ddd">
+              <a [routerLink]="['/usuario', telefones.ddd?.id, 'view']">{{ telefones.ddd?.id }}</a>
+            </div>
+          </td>
+          <td class="text-right">
+            <div class="btn-group">
+              <button
+                type="submit"
+                [routerLink]="['/telefones', telefones.id, 'view']"
+                class="btn btn-info btn-sm"
+                data-cy="entityDetailsButton"
+              >
+                <fa-icon icon="eye"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+              </button>
+
+              <button
+                type="submit"
+                [routerLink]="['/telefones', telefones.id, 'edit']"
+                class="btn btn-primary btn-sm"
+                data-cy="entityEditButton"
+              >
+                <fa-icon icon="pencil-alt"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+              </button>
+
+              <button type="submit" (click)="delete(telefones)" class="btn btn-danger btn-sm" data-cy="entityDeleteButton">
+                <fa-icon icon="times"></fa-icon>
+                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+              </button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

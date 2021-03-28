@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+  <div class="col-8">
+    <div *ngIf="telefones">
+      <h2 data-cy="telefonesDetailsHeading"><span jhiTranslate="gutoApp.telefones.detail.title">Telefones</span></h2>
+
+      <hr />
+
+      <jhi-alert-error></jhi-alert-error>
+
+      <jhi-alert></jhi-alert>
+
+      <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="global.field.id">ID</span></dt>
+        <dd>
+          <span>{{ telefones.id }}</span>
+        </dd>
+        <dt><span jhiTranslate="gutoApp.telefones.phoneDDD">Phone DDD</span></dt>
+        <dd>
+          <span>{{ telefones.phoneDDD }}</span>
+        </dd>
+        <dt><span jhiTranslate="gutoApp.telefones.phoneNumero">Phone Numero</span></dt>
+        <dd>
+          <span>{{ telefones.phoneNumero }}</span>
+        </dd>
+        <dt><span jhiTranslate="gutoApp.telefones.ddd">Ddd</span></dt>
+        <dd>
+          <div *ngIf="telefones.ddd">
+            <a [routerLink]="['/usuario', telefones.ddd?.id, 'view']">{{ telefones.ddd?.id }}</a>
+          </div>
+        </dd>
+      </dl>
+
+      <button type="submit" (click)="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">
+        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+      </button>
+
+      <button type="button" [routerLink]="['/telefones', telefones.id, 'edit']" class="btn btn-primary">
+        <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+      </button>
+    </div>
+  </div>
+</div>

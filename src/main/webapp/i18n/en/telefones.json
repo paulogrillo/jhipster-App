@@ -1,0 +1,26 @@
+{
+  "gutoApp": {
+    "telefones": {
+      "home": {
+        "title": "Telefones",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Telefones",
+        "createOrEditLabel": "Create or edit a Telefones",
+        "notFound": "No Telefones found"
+      },
+      "created": "A new Telefones is created with identifier {{ param }}",
+      "updated": "A Telefones is updated with identifier {{ param }}",
+      "deleted": "A Telefones is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Telefones {{ id }}?"
+      },
+      "detail": {
+        "title": "Telefones"
+      },
+      "id": "ID",
+      "phoneDDD": "Phone DDD",
+      "phoneNumero": "Phone Numero",
+      "ddd": "Ddd"
+    }
+  }
+}

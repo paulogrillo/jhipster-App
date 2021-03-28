@@ -1,0 +1,32 @@
+{
+  "name": "Login",
+  "fields": [
+    {
+      "fieldName": "login",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "usuario",
+      "otherEntityRelationshipName": "login",
+      "relationshipName": "loginXUsuario",
+      "ownerSide": true
+    }
+  ],
+  "entityTableName": "login",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210328014025"
+}

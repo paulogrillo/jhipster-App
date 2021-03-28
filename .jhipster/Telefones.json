@@ -1,0 +1,31 @@
+{
+  "name": "Telefones",
+  "fields": [
+    {
+      "fieldName": "phoneDDD",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "phoneNumero",
+      "fieldType": "Integer"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "usuario",
+      "otherEntityRelationshipName": "telefones",
+      "relationshipName": "ddd"
+    }
+  ],
+  "entityTableName": "telefones",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": "*",
+  "changelogDate": "20210328014027"
+}
